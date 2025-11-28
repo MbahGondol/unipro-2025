@@ -63,7 +63,7 @@
                 </ul>
             </div>
             
-            <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse ml-4">
+            <div class="hidden md:flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse ml-4">
                 <a href="#kontak" class="text-white bg-klinik-biru hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-6 py-2 text-center transition-all shadow-lg shadow-blue-500/30">Daftar Antrian</a>
             </div>
         </div>
@@ -188,7 +188,7 @@
                     </div>
                 </div>
                 <div class="h-full min-h-[400px] rounded-2xl overflow-hidden shadow-lg border-4 border-white">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.096892607994!2d112.60533587410977!3d-7.988941679668388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7882be375172b9%3A0x6283b4e607914092!2sUniversitas%20PGRI%20Kanjuruhan%20Malang!5e0!3m2!1sid!2sid!4v1700570000000!5m2!1sid!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.147738372546!2d112.61354277405497!3d-7.9836666796026275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78829a67c04031%3A0x317151303637020!2sJl.%20S.%20Supriadi%20No.48%2C%20Sukun%2C%20Kec.%20Sukun%2C%20Kota%20Malang%2C%20Jawa%20Timur%2065147!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
@@ -223,7 +223,7 @@
                 </div>
             </div>
             <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
-                <p>© 2025 Klinik UNIPRO. Dibuat oleh <span class="text-white font-bold">MbahGondol </span>.</p>
+                <p>© 2025 Klinik UNIPRO. Dibuat oleh <span class="text-white font-bold">MbahGondol (Team 2)</span>.</p>
             </div>
         </div>
     </footer>
@@ -239,7 +239,7 @@
                 });
             }
             
-            // Logic Smooth Scroll & Scroll Spy (DIPERBAIKI)
+            // Logic Smooth Scroll & Scroll Spy
             const sections = document.querySelectorAll('section');
             const navLinks = document.querySelectorAll('.nav-link');
 
@@ -255,6 +255,7 @@
                     }
                 });
 
+                // Trik: Jika di paling atas (scroll < 100), paksa 'beranda' yang aktif
                 if (window.scrollY < 100) {
                     current = 'beranda';
                 }
@@ -275,6 +276,7 @@
             // Jalankan fungsi saat discroll
             window.addEventListener('scroll', updateActiveMenu);
             
+            // Jalankan fungsi 1x saat pertama kali load
             updateActiveMenu();
 
             // Logic Klik Smooth
