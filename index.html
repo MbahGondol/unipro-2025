@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klinik Sehat Inovatif | UNIPRO 2025</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'klinik-biru': '#0ea5e9', 
+                        'klinik-gelap': '#0f172a',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Agar saat klik menu, turunnya halus */
+        html { scroll-behavior: smooth; }
+        
+        /* Animasi Gelembung Bergerak */
+        @keyframes blob {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+        .animate-blob { animation: blob 7s infinite; }
+        .animation-delay-2000 { animation-delay: 2s; }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 text-gray-800">
+
+    <!-- NAVBAR -->
+    <nav class="fixed w-full z-50 top-0 start-0 border-b border-gray-200 bg-white/80 backdrop-blur-md">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <div class="bg-klinik-biru text-white p-2 rounded-lg">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                </div>
+                <span class="self-center text-2xl font-bold whitespace-nowrap text-klinik-gelap">Klinik UNIPRO</span>
+            </a>
+
+            <!-- Tombol Menu HP -->
+            <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none">
+                <span class="sr-only">Buka menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/></svg>
+            </button>
+
+            <!-- Menu Link -->
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
+                    <li><a href="#beranda" class="block py-2 px-3 text-white bg-klinik-biru rounded md:bg-transparent md:text-klinik-biru md:p-0">Beranda</a></li>
+                    <li><a href="#tentang" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-klinik-biru md:p-0">Tentang Kami</a></li>
+                    <li><a href="#layanan" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-klinik-biru md:p-0">Layanan & Harga</a></li>
+                    <li><a href="#kontak" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-klinik-biru md:p-0">Lokasi</a></li>
+                </ul>
+            </div>
+            
+            <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse ml-4">
+                <a href="#kontak" class="text-white bg-klinik-biru hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-6 py-2 text-center transition-all shadow-lg shadow-blue-500/30">Daftar Antrian</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="beranda" class="pt-32 pb-20 bg-gradient-to-br from-blue-50 via-white to-blue-50 overflow-hidden">
+        <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 relative">
+            <div class="mr-auto place-self-center lg:col-span-7 z-10">
+                <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-klinik-biru text-xs font-bold tracking-wide mb-4">SOLUSI KESEHATAN DIGITAL</span>
+                <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-klinik-gelap">Kesehatan Anda,<br>Prioritas <span class="text-klinik-biru">Teknologi</span> Kami.</h1>
+                <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl">Layanan klinik modern dengan integrasi teknologi cerdas. Booking dokter lebih mudah, antrian transparan, dan pelayanan ramah.</p>
+                <div class="flex flex-col space-y-4 sm:flex-row sm:justify-start sm:space-y-0 sm:space-x-4">
+                    <a href="#layanan" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-full bg-klinik-biru hover:bg-blue-600 shadow-lg shadow-blue-500/30 transition-all">Lihat Layanan <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/></svg></a>
+                    <a href="#tentang" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-full border border-gray-300 hover:bg-gray-100 transition-all">Tentang Klinik</a>
+                </div>
+            </div>
+            <div class="hidden lg:mt-0 lg:col-span-5 lg:flex relative">
+                <div class="absolute bg-blue-200 rounded-full w-72 h-72 mix-blend-multiply filter blur-xl opacity-70 animate-blob top-0 -left-4"></div>
+                <div class="absolute bg-purple-200 rounded-full w-72 h-72 mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000 bottom-0 -right-4"></div>
+                <img src="img/img1.jpg" alt="Dokter Ramah" class="relative rounded-2xl shadow-2xl z-10 border-4 border-white transform rotate-2 hover:rotate-0 transition duration-500">
+            </div>                
+        </div>
+    </section>
+
+    <!-- STATISTIK -->
+    <section class="bg-klinik-biru py-10">
+        <div class="max-w-screen-xl mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
+                <div><h3 class="text-3xl font-bold">5000+</h3><p class="text-blue-100 text-sm">Pasien Sembuh</p></div>
+                <div><h3 class="text-3xl font-bold">24/7</h3><p class="text-blue-100 text-sm">Layanan Darurat</p></div>
+                <div><h3 class="text-3xl font-bold">15+</h3><p class="text-blue-100 text-sm">Dokter Spesialis</p></div>
+                <div><h3 class="text-3xl font-bold">4.9</h3><p class="text-blue-100 text-sm">Rating Kepuasan</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LAYANAN SECTION -->
+    <section id="layanan" class="py-20 bg-white">
+        <div class="max-w-screen-xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-klinik-gelap mb-4">Layanan & Tarif</h2>
+                <p class="text-gray-500 max-w-xl mx-auto">Kami menyediakan layanan kesehatan terbaik dengan harga yang transparan dan terjangkau.</p>
+                <div class="w-24 h-1 bg-klinik-biru mx-auto mt-4 rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Poli Umum -->
+                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-blue-100 text-klinik-biru rounded-lg flex items-center justify-center mb-6 group-hover:bg-klinik-biru group-hover:text-white transition-colors">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-klinik-gelap mb-3">Poli Umum</h3>
+                    <p class="text-gray-500 text-sm mb-6">Pemeriksaan kesehatan dasar, konsultasi gejala ringan, dan surat keterangan sehat.</p>
+                    <div class="flex items-end justify-between border-t border-gray-200 pt-4">
+                        <div><span class="text-xs text-gray-400">Mulai dari</span><p class="text-lg font-bold text-klinik-biru">Rp 50.000</p></div>
+                        <a href="#kontak" class="text-sm font-semibold text-gray-400 hover:text-klinik-biru">Daftar -></a>
+                    </div>
+                </div>
+                <!-- Poli Gigi -->
+                <div class="bg-white rounded-2xl p-8 border-2 border-klinik-biru shadow-xl relative transform scale-105 md:scale-105 z-10">
+                    <div class="absolute top-0 right-0 bg-klinik-biru text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">POPULER</div>
+                    <div class="w-14 h-14 bg-blue-600 text-white rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-klinik-gelap mb-3">Poli Gigi</h3>
+                    <p class="text-gray-500 text-sm mb-6">Perawatan gigi berlubang, scaling (bersih karang), hingga pencabutan gigi bungsu.</p>
+                    <div class="flex items-end justify-between border-t border-gray-200 pt-4">
+                        <div><span class="text-xs text-gray-400">Mulai dari</span><p class="text-lg font-bold text-klinik-biru">Rp 150.000</p></div>
+                        <a href="#kontak" class="text-sm font-semibold text-klinik-biru">Daftar Sekarang -></a>
+                    </div>
+                </div>
+                <!-- Checkup -->
+                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-blue-100 text-klinik-biru rounded-lg flex items-center justify-center mb-6 group-hover:bg-klinik-biru group-hover:text-white transition-colors">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-klinik-gelap mb-3">Medical Checkup</h3>
+                    <p class="text-gray-500 text-sm mb-6">Cek kolesterol, gula darah, asam urat, dan tekanan darah lengkap + konsultasi.</p>
+                    <div class="flex items-end justify-between border-t border-gray-200 pt-4">
+                        <div><span class="text-xs text-gray-400">Paket Lengkap</span><p class="text-lg font-bold text-klinik-biru">Rp 350.000</p></div>
+                        <a href="#kontak" class="text-sm font-semibold text-gray-400 hover:text-klinik-biru">Daftar -></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TENTANG SECTION -->
+    <section id="tentang" class="py-20 bg-blue-50">
+        <div class="max-w-screen-xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/2">
+                    <img src="img/img2.jpg" alt="Interior Klinik" class="rounded-2xl shadow-lg border-8 border-white">
+                </div>
+                <div class="w-full md:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold text-klinik-gelap mb-6">Mengapa Memilih Klinik UNIPRO?</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">Kami menggabungkan layanan medis profesional dengan teknologi terkini. Klinik UNIPRO hadir untuk memberikan pengalaman berobat yang nyaman, tanpa antrian panjang yang melelahkan.</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center space-x-3"><svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-700">Dokter Berpengalaman & Tersertifikasi</span></li>
+                        <li class="flex items-center space-x-3"><svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-700">Pendaftaran Online via Website</span></li>
+                        <li class="flex items-center space-x-3"><svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span class="text-gray-700">Fasilitas Modern & Bersih</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KONTAK SECTION -->
+    <section id="kontak" class="py-20 bg-white">
+        <div class="max-w-screen-xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-klinik-gelap mb-4">Hubungi Kami</h2>
+                <p class="text-gray-500">Kunjungi klinik kami atau hubungi kontak di bawah untuk pendaftaran.</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="bg-blue-50 p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold text-klinik-gelap mb-6">Info Kontak</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-white p-3 rounded-full text-klinik-biru shadow-sm"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg></div>
+                            <div><h4 class="font-bold text-gray-800">Alamat Klinik</h4><p class="text-gray-600 text-sm">Jl. S. Supriadi No.48, Malang<br>(Dekat Universitas PGRI Kanjuruhan)</p></div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-white p-3 rounded-full text-green-500 shadow-sm"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></div>
+                            <div><h4 class="font-bold text-gray-800">WhatsApp / Telp</h4><p class="text-gray-600 text-sm">0812-3456-7890 (Admin)</p><a href="https://wa.me/6281234567890" target="_blank" class="text-klinik-biru text-sm font-semibold hover:underline mt-1 inline-block">Chat Sekarang -></a></div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <a href="https://wa.me/6281234567890?text=Halo%20Klinik%20UNIPRO,%20saya%20ingin%20daftar%20berobat." target="_blank" class="block w-full py-4 bg-klinik-biru text-white text-center font-bold rounded-xl shadow-lg hover:bg-blue-600 transition-all transform hover:scale-105">DAFTAR VIA WHATSAPP</a>
+                    </div>
+                </div>
+                <div class="h-full min-h-[400px] rounded-2xl overflow-hidden shadow-lg border-4 border-white">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.096892607994!2d112.60533587410977!3d-7.988941679668388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7882be375172b9%3A0x6283b4e607914092!2sUniversitas%20PGRI%20Kanjuruhan%20Malang!5e0!3m2!1sid!2sid!4v1700570000000!5m2!1sid!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-klinik-gelap text-white pt-16 pb-8">
+        <div class="max-w-screen-xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="bg-klinik-biru p-2 rounded-lg"><svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg></div>
+                        <span class="text-2xl font-bold">Klinik UNIPRO</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed max-w-sm">Menghadirkan layanan kesehatan masa depan dengan perpaduan teknologi dan pelayanan yang humanis.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Menu</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#beranda" class="hover:text-klinik-biru transition">Beranda</a></li>
+                        <li><a href="#tentang" class="hover:text-klinik-biru transition">Tentang Kami</a></li>
+                        <li><a href="#layanan" class="hover:text-klinik-biru transition">Layanan & Harga</a></li>
+                        <li><a href="#kontak" class="hover:text-klinik-biru transition">Hubungi Kami</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Jam Operasional</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li class="flex justify-between"><span>Senin - Jumat</span> <span>08.00 - 21.00</span></li>
+                        <li class="flex justify-between"><span>Sabtu</span> <span>08.00 - 17.00</span></li>
+                        <li class="flex justify-between text-red-400"><span>Minggu</span> <span>Tutup</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2025 Klinik UNIPRO. Dibuat oleh <span class="text-white font-bold">MbahGondol (Team 2)</span>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Logic Tombol Menu HP
+            const toggleButton = document.querySelector('[data-collapse-toggle="navbar-sticky"]');
+            const navbarMenu = document.getElementById('navbar-sticky');
+            if (toggleButton && navbarMenu) {
+                toggleButton.addEventListener('click', function() {
+                    navbarMenu.classList.toggle('hidden');
+                });
+            }
+            
+            // Logic Smooth Scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                        if (navbarMenu && !navbarMenu.classList.contains('hidden')) {
+                            navbarMenu.classList.add('hidden');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
